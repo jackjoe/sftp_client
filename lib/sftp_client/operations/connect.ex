@@ -172,7 +172,8 @@ defmodule SFTPClient.Operations.Connect do
       :key_cb,
       :modify_algorithms,
       :preferred_algorithms,
-      :packet_size
+      :packet_size,
+      :rekey_limit
     ])
     |> Enum.reduce([], fn
       {_key, nil}, opts ->

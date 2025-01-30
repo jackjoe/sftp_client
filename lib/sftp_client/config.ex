@@ -22,7 +22,8 @@ defmodule SFTPClient.Config do
     :key_cb,
     :modify_algorithms,
     :preferred_algorithms,
-    :packet_size
+    :packet_size,
+    :rekey_limit
   ]
 
   @type t :: %__MODULE__{
@@ -44,7 +45,8 @@ defmodule SFTPClient.Config do
           key_cb: nil | {module, term},
           modify_algorithms: nil | Keyword.t(),
           preferred_algorithms: nil | Keyword.t(),
-          packet_size: non_neg_integer
+          packet_size: non_neg_integer,
+          rekey_limit: nil | [{:bytes, non_neg_integer()} | {:time, non_neg_integer()}]
         }
 
   @doc """
