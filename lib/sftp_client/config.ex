@@ -46,7 +46,7 @@ defmodule SFTPClient.Config do
           modify_algorithms: nil | Keyword.t(),
           preferred_algorithms: nil | Keyword.t(),
           packet_size: non_neg_integer,
-          rekey_limit: nil | [{:bytes, non_neg_integer()} | {:time, non_neg_integer()}]
+          rekey_limit: nil | {non_neg_integer(),  non_neg_integer()} # {bytes, time}
         }
 
   @doc """
